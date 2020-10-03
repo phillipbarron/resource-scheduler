@@ -4,11 +4,9 @@ import Row from "react-bootstrap/Row";
 import NavBar from "react-bootstrap/NavBar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
-import { Calendar, momentLocalizer } from 'react-big-calendar'
-import moment from 'moment'
-import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./App.css";
-const localizer = momentLocalizer(moment)
+import Schedule from "./schedule";
+
 function App() {
   return (
     <Container>
@@ -35,14 +33,8 @@ function App() {
           </NavBar.Collapse>
         </NavBar>
       </Row>
-      <Row>
-      <Calendar
-      localizer={localizer}
-      events={[]}
-      startAccessor="start"
-      endAccessor="end"
-      style={{ height: 500 }}
-    />
+      <Row> 
+        <Schedule />
       </Row>
     </Container>
   );
